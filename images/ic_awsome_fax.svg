@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 20px;
+        font-family: FontAwesome;
+        letter-spacing: 0.03em;
+      }
+    </style>
+  </defs>
+  <text id="_" data-name="" class="cls-1" transform="translate(10 18)"><tspan x="-10" y="0"></tspan></text>
+</svg>

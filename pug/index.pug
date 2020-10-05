@@ -8,11 +8,12 @@ html
     link(rel="shortcut icon" href="img/favicon.ico")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" media="(prefers-reduced-motion: no-preference)")
     link(rel="stylesheet" href="css/style.css")
   body
-    .page-view
-      a#scroll-top.page-scroll-top(href="#")
+    #page.page-view
+      a#scroll-top.page-scroll-top(href="#page")
         i.fa.fa-angle-double-up
       include _header
       main.page-content

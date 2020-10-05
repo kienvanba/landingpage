@@ -57,18 +57,11 @@
 		}
 	}
 
-	.showcase {
-		.video {
-			&:before {
-				padding-bottom: calc-ratio(16, 9);
-			}
-		}
-	}
-
 	.gallery {
 		bottom: -4rem;
 		display: flex;
 		flex-wrap: wrap;
+		margin-top: -4rem;
 		position: relative;
 		justify-content: space-between;
 

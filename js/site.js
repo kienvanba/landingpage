@@ -1,7 +1,30 @@
 $(function () {
+	setupSmoothScroll();
+	setupProductCarousel();
 	setupScrollAnimation();
 	setupLazyLoadElements();
 });
+
+function setupSmoothScroll() {
+	$("a").on("click", function (e) {
+		if (this.hash !== "") {
+			e.preventDefault();
+			$("html, body").animate({ scrollTop: $(this.hash).offset().top }, 800);
+		}
+	});
+}
+
+function setupProductCarousel() {
+	$("#catalog .carousel--list").slick({
+		autoplay: true,
+		infinite: true,
+		slidesToShow: 3,
+		centerMode: true,
+		variableWidth: true,
+		prevArrow: $("#catalog .carousel--prev"),
+		nextArrow: $("#catalog .carousel--next"),
+	});
+}
 
 function setupScrollAnimation() {
 	detectScrollIntoView($("[data-scroll-animation").toArray(), function (elem) {

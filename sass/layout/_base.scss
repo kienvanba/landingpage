@@ -109,6 +109,7 @@ a {
 	&:before {
 		content: "";
 		display: block;
+		padding-bottom: calc-ratio(16, 9);
 	}
 
 	iframe,

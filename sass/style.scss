@@ -80,7 +80,77 @@
 }
 
 .page-footer {
+	padding: 2rem 0;
+	margin-top: 4rem;
+	font-size: 0.8rem;
+	line-height: 2.25;
 	position: relative;
+	background: $color-accent-3;
+
+	.container {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.col {
+		width: 30%;
+	}
+
+	.left {
+		.title {
+			line-height: 1.75;
+			text-transform: uppercase;
+
+			strong {
+				display: block;
+			}
+		}
+
+		.contact {
+			margin-top: 0.25em;
+
+			.fa {
+				width: 1.5rem;
+				display: inline-block;
+			}
+		}
+
+		.social {
+			display: flex;
+			align-items: center;
+			margin-top: 0.75rem;
+			padding-top: 0.75rem;
+			justify-content: flex-start;
+			border-top: 1px solid $color-dark-1;
+
+			li {
+				display: block;
+				margin-right: 1.5rem;
+			}
+		}
+	}
+
+	.middle {
+		.license {
+			margin-top: 3.5em;
+		}
+
+		.logo-trade {
+			width: 12em;
+			margin-top: 1em;
+
+			&:before {
+				padding-bottom: calc-ratio(363, 137);
+			}
+		}
+	}
+
+	.right {
+		.video {
+			margin-top: 2em;
+		}
+	}
 }
 
 .page-content {

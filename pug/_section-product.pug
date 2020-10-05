@@ -6,17 +6,21 @@
 - products.push("Ngói tráng men - Engobe");
 - products.push("Ngói phụ kiện");
 
-section#event.page-content--product
+section#product.page-content--product
   .title
     h2 Danh mục sản phẩm
   .container
-    .carousel
-      each product, x in products
-        a.item(href="#" target="_blank" rel="noreferrer")
-          .content
-            .photo(class="photo-" + x).lazy-img
-              img.fade(data-src="img/product-" + x + ".jpg" alt="product")
-            strong=product
-          .hover
-            strong=product
-            span Tìm hiểu thêm &#10141;
+    #catalog.carousel
+      button.carousel--prev(type="button"): i.fa.fa-angle-left
+      button.carousel--next(type="button"): i.fa.fa-angle-right
+      .carousel--list
+        each product, x in products
+          a.item(href="#" target="_blank" rel="noreferrer")
+            .inner
+              .content
+                .photo(class="photo-" + x).lazy-img
+                  img.fade(data-src="img/product-" + x + ".jpg" alt="product")
+                strong=product
+              .hover
+                strong=product
+                span Tìm hiểu thêm &#10141;

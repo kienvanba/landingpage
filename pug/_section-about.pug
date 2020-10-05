@@ -1,4 +1,4 @@
-section#event.page-content--about
+section#about.page-content--about
   .title
     .container
       h2 Giới thiệu
@@ -14,5 +14,5 @@ section#event.page-content--about
         iframe(data-src="https://www.youtube.com/embed/6rrudsUbbjs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
     .gallery
       - for (x = 1; x < 9; x++)
-        .photo(class="photo-" + x).lazy-img(data-scroll-animation="fadeInDown")
+        .photo(class="photo-" + x).lazy-img(data-scroll-animation="fadeInUp")
           img.fade(data-src="img/photo-" + x + ".jpg" alt="photo")

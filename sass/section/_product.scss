@@ -24,10 +24,103 @@
 	}
 
 	.carousel {
+		margin: 2rem 0;
+		position: relative;
+
+		&--prev,
+		&--next {
+			width: 1.75rem;
+			height: 1.75rem;
+			outline: none;
+			border: 0 none;
+			cursor: pointer;
+			background: $color-accent-3;
+			@include center-parent($dir: ver);
+
+			.fa {
+				color: $color-light-1;
+				@include center-parent;
+			}
+		}
+
+		&--prev {
+			left: -3rem;
+		}
+
+		&--next {
+			right: -3rem;
+		}
+
 		.item {
-			.photo {
-				&:before {
-					// padding-bottom: calc-ratio(1, 1);
+			outline: none;
+			padding: 0 1rem;
+			display: inline-block;
+			width: calc((80vw + 2rem) / 3);
+			max-width: calc((#{calc-rem(1170)} + 2rem) / 3);
+
+			.inner {
+				width: 100%;
+				text-align: center;
+				position: relative;
+				padding: 1.5rem 2rem 1rem;
+				border: 2px solid $color-accent-2;
+
+				strong {
+					text-transform: uppercase;
+					transition: opacity 250ms ease-in-out;
+				}
+
+				.content {
+					.photo {
+						&:before {
+							padding-bottom: calc-ratio(1, 1);
+						}
+					}
+				}
+
+				.hover {
+					opacity: 0;
+					user-select: none;
+					background: rgba($color-accent-2, 0.7);
+					transition: opacity 250ms ease-in-out;
+					@include fill-parent;
+
+					strong {
+						@include center-parent;
+					}
+
+					span {
+						font-size: 0.8rem;
+						border-radius: 999px;
+						padding: 0.25rem 0.75rem;
+						border: 1px solid $color-brand;
+						transition: all 250ms ease-in-out;
+						@include anchor-pseudo {
+							color: $color-brand;
+						}
+						@include center-parent(
+							$dir: hor,
+							$bottom: 1rem,
+							$display: inline-block
+						);
+
+						&:hover {
+							background: $color-brand;
+							@include anchor-pseudo {
+								color: $color-light-1;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					.content strong {
+						opacity: 0;
+					}
+
+					.hover {
+						opacity: 1;
+					}
 				}
 			}
 		}

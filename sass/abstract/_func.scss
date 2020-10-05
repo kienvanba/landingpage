@@ -1,0 +1,14 @@
+@function strip-unit($number) {
+	@if type-of($number) == "number" and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
+}
+
+@function calc-rem($value, $font-size: $font-size-base-px) {
+	@return ($value / $font-size) * 1rem;
+}
+
+@function calc-ratio($width, $height) {
+	@return ($height / $width) * 100%;
+}

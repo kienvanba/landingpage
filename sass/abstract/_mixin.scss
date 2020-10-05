@@ -1,0 +1,269 @@
+@mixin media-mobile-only {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin media-desktop-only {
+	@media only screen and (min-width: 769px) {
+		@content;
+	}
+}
+
+@mixin anchor-pseudo() {
+	&,
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited {
+		@content;
+	}
+}
+
+@mixin button() {
+	cursor: pointer;
+	border: 0 none;
+	outline: 0 none;
+	font-weight: 600;
+	user-select: none;
+	padding: 0.9rem 2rem 0.85rem;
+	@include border-radius(0.5rem);
+	@include anchor-pseudo {
+		text-decoration: none;
+	}
+
+	* {
+		line-height: 1;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+@mixin button-solid() {
+	background: $color-brand;
+	border: 2px solid $color-brand;
+	transition: background 150ms ease-in-out;
+	@include anchor-pseudo {
+		&,
+		* {
+			color: $color-light-1;
+		}
+	}
+
+	&:hover {
+		background: lighten($color-brand, 10%);
+		border-color: lighten($color-brand, 10%);
+	}
+}
+
+@mixin button-stroke() {
+	border: 2px solid $color-brand;
+	transition: all 150ms ease-in-out;
+	@include anchor-pseudo {
+		&,
+		* {
+			color: $color-brand;
+		}
+	}
+
+	&:hover {
+		color: lighten($color-brand, 10%);
+		border-color: lighten($color-brand, 10%);
+	}
+}
+
+@mixin webkit-scroll() {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+@mixin text-cut($width: 100%, $display: block) {
+	@if $width != none {
+		max-width: $width;
+	}
+	overflow: hidden;
+	display: $display;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin text-cut-lines($height: auto, $webkit-lines: 999) {
+	max-height: $height;
+	overflow: hidden;
+
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+		height: auto;
+		white-space: normal;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $webkit-lines;
+	}
+}
+
+@mixin first-children($n: 1) {
+	&:nth-of-type(-n + #{$n}) {
+		@content;
+	}
+}
+
+@mixin last-children($n: 1) {
+	&:nth-last-of-type(-n + #{$n}) {
+		@content;
+	}
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin css3($property, $value) {
+	-moz-#{$property}: $value;
+	-webkit-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin border-radius(
+	$all: auto,
+	$top: auto,
+	$right: auto,
+	$bottom: auto,
+	$left: auto
+) {
+	@if $all != auto {
+		border-radius: $all;
+	} @else if $top != auto {
+		border-top-left-radius: $top;
+		border-top-right-radius: $top;
+	} @else if $right != auto {
+		border-top-right-radius: $right;
+		border-bottom-right-radius: $right;
+	} @else if $bottom != auto {
+		border-bottom-left-radius: $bottom;
+		border-bottom-right-radius: $bottom;
+	} @else if $left != auto {
+		border-top-left-radius: $left;
+		border-bottom-left-radius: $left;
+	} @else {
+		border-radius: $border-radius-base;
+	}
+}
+
+@mixin position(
+	$top: auto,
+	$right: auto,
+	$bottom: auto,
+	$left: auto,
+	$z-index: 1,
+	$position: absolute,
+	$display: block
+) {
+	display: $display;
+	z-index: $z-index;
+	position: $position;
+
+	@if $top != auto {
+		top: $top;
+	}
+
+	@if $right != auto {
+		right: $right;
+	}
+
+	@if $bottom != auto {
+		bottom: $bottom;
+	}
+
+	@if $left != auto {
+		left: $left;
+	}
+}
+
+@mixin fixed(
+	$top: auto,
+	$right: auto,
+	$bottom: auto,
+	$left: auto,
+	$z-index: 1,
+	$display: block
+) {
+	@include position($top, $right, $bottom, $left, $z-index, fixed, $display);
+}
+
+@mixin absolute(
+	$top: auto,
+	$right: auto,
+	$bottom: auto,
+	$left: auto,
+	$z-index: 1,
+	$display: block
+) {
+	@include position($top, $right, $bottom, $left, $z-index, absolute, $display);
+}
+
+@mixin center-parent(
+	$dir: all,
+	$top: auto,
+	$right: auto,
+	$bottom: auto,
+	$left: auto,
+	$z-index: 1,
+	$position: absolute,
+	$display: block
+) {
+	@if $dir == all {
+		@include position(
+			$top: 50%,
+			$left: 50%,
+			$position: $position,
+			$z-index: $z-index,
+			$display: $display
+		);
+		@include css3(transform, translate(-50%, -50%));
+	}
+
+	@if $dir == hor {
+		@include position(
+			$left: 50%,
+			$top: $top,
+			$bottom: $bottom,
+			$position: $position,
+			$z-index: $z-index,
+			$display: $display
+		);
+		@include css3(transform, translateX(-50%));
+	}
+
+	@if $dir == ver {
+		@include position(
+			$top: 50%,
+			$left: $left,
+			$right: $right,
+			$position: $position,
+			$z-index: $z-index,
+			$display: $display
+		);
+		@include css3(transform, translateY(-50%));
+	}
+}
+
+@mixin fill-parent($position: absolute, $z-index: 1, $display: block) {
+	width: 100%;
+	height: 100%;
+	@include position(
+		$top: 0,
+		$right: 0,
+		$bottom: 0,
+		$left: 0,
+		$position: $position,
+		$z-index: $z-index,
+		$display: $display
+	);
+}

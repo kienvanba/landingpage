@@ -1,0 +1,131 @@
+.page-content--event {
+	top: 3rem;
+	right: 8%;
+	z-index: 2;
+	padding: 0 0 2rem;
+	position: relative;
+	background: $color-accent-2;
+
+	.container {
+		width: 100%;
+		display: flex;
+		margin-right: 0;
+		margin-left: auto;
+		max-width: calc-rem(1366);
+		justify-content: space-between;
+	}
+
+	.location {
+		width: 40%;
+
+		.photo {
+			top: -2.5rem;
+			border: 0.75rem solid $color-light-1;
+
+			&:before {
+				padding-bottom: calc-ratio(1024, 686);
+			}
+		}
+
+		.name {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			margin-top: -1.5rem;
+
+			.icon {
+				width: 2.25rem;
+			}
+
+			span {
+				font-weight: 600;
+				margin-left: 0.5rem;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.info {
+		width: 60%;
+		padding-left: 2rem;
+
+		.title {
+			position: relative;
+
+			&:before {
+				content: "";
+				width: 2px;
+				height: 2rem;
+				background: $color-brand;
+				@include center-parent($dir: ver, $left: 0);
+			}
+
+			&:after {
+				content: "";
+				width: 100%;
+				height: 1px;
+				background: $color-brand;
+				@include center-parent($dir: ver, $left: 0);
+			}
+
+			h2 {
+				left: 2px;
+				z-index: 2;
+				padding: 0 1rem;
+				position: relative;
+				display: inline-block;
+				background: $color-accent-2;
+			}
+		}
+
+		.detail {
+			display: flex;
+			padding: 0 2rem 0 1rem;
+			justify-content: space-between;
+
+			.item {
+				text-align: center;
+				width: calc((100% - 3rem) / 3);
+
+				.icon {
+					width: 50%;
+					margin: 0 auto 0.5rem;
+				}
+
+				strong,
+				span {
+					display: block;
+				}
+
+				strong {
+					font-size: 1.1rem;
+					position: relative;
+					margin-bottom: 0.5rem;
+					padding-bottom: 0.5rem;
+					text-transform: uppercase;
+
+					&:after {
+						content: "";
+						width: 2rem;
+						height: 2px;
+						background: $color-brand;
+						@include center-parent($dir: hor, $bottom: 0);
+					}
+				}
+
+				span {
+					font-size: 0.9rem;
+				}
+
+				a {
+					font-size: 0.75rem;
+					font-style: italic;
+					@include anchor-pseudo {
+						color: $color-accent-4;
+					}
+				}
+			}
+		}
+	}
+}

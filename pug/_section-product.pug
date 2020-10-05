@@ -1,0 +1,22 @@
+- var products = [];
+- products.push("Ngói lợp");
+- products.push("Gạch trang trí");
+- products.push("Gạch lát nền");
+- products.push("Ngói lợp");
+- products.push("Ngói tráng men - Engobe");
+- products.push("Ngói phụ kiện");
+
+section#event.page-content--product
+  .title
+    h2 Danh mục sản phẩm
+  .container
+    .carousel
+      each product, x in products
+        a.item(href="#" target="_blank" rel="noreferrer")
+          .content
+            .photo(class="photo-" + x).lazy-img
+              img.fade(data-src="img/product-" + x + ".jpg" alt="product")
+            strong=product
+          .hover
+            strong=product
+            span Tìm hiểu thêm &#10141;

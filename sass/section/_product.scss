@@ -1,0 +1,35 @@
+.page-content--product {
+	margin-top: -6rem;
+	position: relative;
+
+	.title {
+		text-align: center;
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 100%;
+			height: 1px;
+			background: $color-brand;
+			@include center-parent($dir: ver, $left: 0);
+		}
+
+		h2 {
+			z-index: 2;
+			padding: 0 2rem;
+			position: relative;
+			display: inline-block;
+			background: $color-light-1;
+		}
+	}
+
+	.carousel {
+		.item {
+			.photo {
+				&:before {
+					// padding-bottom: calc-ratio(1, 1);
+				}
+			}
+		}
+	}
+}

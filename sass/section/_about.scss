@@ -1,0 +1,139 @@
+.page-content--about {
+	top: -12rem;
+	padding-top: 16rem;
+	position: relative;
+	background: $color-accent-1;
+
+	.title {
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 80%;
+			height: 1px;
+			background: $color-brand;
+			@include center-parent($dir: ver, $right: 0);
+		}
+
+		h2 {
+			z-index: 2;
+			padding: 0 1rem;
+			position: relative;
+			display: inline-block;
+			background: $color-accent-1;
+
+			&:before {
+				content: "";
+				width: 2px;
+				height: 2rem;
+				background: $color-brand;
+				@include center-parent($dir: ver, $left: 0);
+			}
+		}
+	}
+
+	.intro {
+		padding: 4rem 0;
+		margin-top: -3rem;
+		position: relative;
+		padding-left: calc(30% + 3rem);
+
+		.logo {
+			width: 30%;
+			@include center-parent($dir: ver, $left: 0);
+
+			&:before {
+				padding-bottom: calc-ratio(740, 622);
+			}
+		}
+
+		.headline {
+			width: 90%;
+			margin: 0 auto 2rem;
+
+			&:before {
+				padding-bottom: calc-ratio(1112, 274);
+			}
+		}
+	}
+
+	.showcase {
+		.video {
+			&:before {
+				padding-bottom: calc-ratio(16, 9);
+			}
+		}
+	}
+
+	.gallery {
+		bottom: -4rem;
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		justify-content: space-between;
+
+		.photo-1,
+		.photo-2 {
+			margin-top: 1rem;
+			width: calc(50% - 0.5rem);
+
+			&:before {
+				padding-bottom: calc-ratio(114, 87);
+			}
+		}
+
+		.photo-3 {
+			width: 100%;
+			margin-top: 1rem;
+
+			&:before {
+				padding-bottom: calc-ratio(234, 87);
+			}
+		}
+
+		.photo-4 {
+			margin-top: 1rem;
+			width: calc(70% - 1rem);
+
+			&:before {
+				padding-bottom: calc-ratio(154, 87);
+			}
+		}
+
+		.photo-5 {
+			width: 30%;
+			margin-top: 1rem;
+
+			&:before {
+				padding-bottom: calc-ratio(73.7, 87);
+			}
+		}
+
+		.photo-6 {
+			width: 30%;
+			margin-top: 1rem;
+
+			&:before {
+				padding-bottom: calc-ratio(73.5, 87);
+			}
+		}
+
+		.photo-7 {
+			margin-top: 1rem;
+			width: calc(70% - 1rem);
+
+			&:before {
+				padding-bottom: calc-ratio(154, 87);
+			}
+		}
+
+		.photo-8 {
+			width: 100%;
+			margin-top: 1rem;
+
+			&:before {
+				padding-bottom: calc-ratio(234, 87);
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+section#event.page-content--about
+  .title
+    .container
+      h2 Giới thiệu
+  .container
+    .intro
+      .logo.lazy-img
+        img.fade(data-src="img/logo-80.png" alt="logo-80")
+      .headline.lazy-img
+        img.fade(data-src="img/headline.png" alt="headline")
+      p Trải qua 80 năm, thăng trầm theo dòng lịch sử trên dòng Bà Lồ, công ty cổ phần Gạch Ngói Đồng Nai đã vượt qua muôn vàn khó khăn, thử thách để trở nên hoàn thiện, phát triển vững mạnh và vươn lên một tầm cao mới như hiện nay.
+    .showcase
+      .video.lazy-vid
+        iframe(data-src="https://www.youtube.com/embed/6rrudsUbbjs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture")
+    .gallery
+      - for (x = 1; x < 9; x++)
+        .photo(class="photo-" + x).lazy-img(data-scroll-animation="fadeInDown")
+          img.fade(data-src="img/photo-" + x + ".jpg" alt="photo")

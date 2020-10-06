@@ -18,6 +18,10 @@
 	.location {
 		width: 40%;
 
+		.title {
+			display: none;
+		}
+
 		.photo {
 			top: -2.5rem;
 			border: 0.75rem solid $color-light-1;
@@ -93,36 +97,38 @@
 					margin: 0 auto 0.5rem;
 				}
 
-				strong,
-				span {
-					display: block;
-				}
-
-				strong {
-					font-size: 1.1rem;
-					position: relative;
-					margin-bottom: 0.5rem;
-					padding-bottom: 0.5rem;
-					text-transform: uppercase;
-
-					&:after {
-						content: "";
-						width: 2rem;
-						height: 2px;
-						background: $color-brand;
-						@include center-parent($dir: hor, $bottom: 0);
+				.note {
+					strong,
+					span {
+						display: block;
 					}
-				}
 
-				span {
-					font-size: 0.9rem;
-				}
+					strong {
+						font-size: 1.1rem;
+						position: relative;
+						margin-bottom: 0.5rem;
+						padding-bottom: 0.5rem;
+						text-transform: uppercase;
 
-				a {
-					font-size: 0.75rem;
-					font-style: italic;
-					@include anchor-pseudo {
-						color: $color-accent-4;
+						&:after {
+							content: "";
+							width: 2rem;
+							height: 2px;
+							background: $color-brand;
+							@include center-parent($dir: hor, $bottom: 0);
+						}
+					}
+
+					span {
+						font-size: 0.9rem;
+					}
+
+					a {
+						font-size: 0.75rem;
+						font-style: italic;
+						@include anchor-pseudo {
+							color: $color-accent-4;
+						}
 					}
 				}
 			}

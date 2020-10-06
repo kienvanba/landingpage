@@ -1,6 +1,10 @@
 html {
 	font-size: calc(20px + (24 - 20) * ((100vw - 1350px) / (2560 - 1350)));
 
+	@include media-xs-only {
+		font-size: 4.15vmin;
+	}
+
 	* {
 		box-sizing: border-box;
 	}
@@ -17,6 +21,10 @@ body {
 	color: $color-dark-1;
 	background: $color-light-1;
 	font-family: $font-family-common;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
 }
 
 a {

@@ -1,13 +1,13 @@
 header.page-header
   .page-header--bar
-    a.toggle(href="#"): i.fa.fa-bars
+    a#page-menu-open.toggle(href="#"): i.fa.fa-bars
     .logo.lazy-img
       img.fade(data-src="img/logo.png" alt="logo")
   .page-header--banner.lazy-img(data-scroll-animation="fadeInDown")
     img.fade(data-src="img/banner.jpg" alt="banner")
   .container
-    .page-header--menu
-      a.close(href="#") &#10005;
+    #page-menu.page-header--menu
+      a#page-menu-close.close(href="#") &#10005;
       .inner
         .logo.lazy-img
           img.fade(data-src="img/logo.png" alt="logo")

@@ -11,7 +11,7 @@
 @import "section/about";
 @import "section/product";
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
 	@import "section/main-xs";
 	@import "section/event-xs";
 	@import "section/about-xs";

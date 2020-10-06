@@ -1,3 +1,59 @@
 .page-content--about {
-	display: none;
+	top: 0;
+	padding-top: 0;
+	background: transparent;
+
+	.title {
+		display: block;
+		text-align: center;
+		position: relative;
+
+		&:after {
+			content: "";
+			width: 100%;
+			height: 1px;
+			background: $color-brand;
+			@include center-parent($dir: ver, $left: 0);
+		}
+
+		h2 {
+			margin: 0;
+			z-index: 2;
+			padding: 0 2rem;
+			position: relative;
+			display: inline-block;
+			background: $color-light-1;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.intro {
+		margin: 0;
+		padding: 1rem;
+
+		.logo {
+			top: 0;
+			left: 0;
+			width: 80%;
+			transform: none;
+			position: relative;
+			margin: 1.5rem auto 2.5rem;
+		}
+
+		.headline {
+			width: 100%;
+		}
+	}
+
+	.gallery {
+		bottom: 0;
+		margin-top: 0;
+
+		.photo {
+			width: 100%;
+		}
+	}
 }

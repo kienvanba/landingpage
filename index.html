@@ -15,12 +15,12 @@
   <body>
     <div class="page-view" id="page"><a class="page-scroll-top" id="scroll-top" href="#page"><i class="fa fa-angle-double-up"></i></a>
       <header class="page-header">
-        <div class="page-header--bar"><a class="toggle" href="#"><i class="fa fa-bars"></i></a>
+        <div class="page-header--bar"><a class="toggle" id="page-menu-open" href="#"><i class="fa fa-bars"></i></a>
           <div class="logo lazy-img"><img class="fade" data-src="img/logo.png" alt="logo"></div>
         </div>
         <div class="page-header--banner lazy-img" data-scroll-animation="fadeInDown"><img class="fade" data-src="img/banner.jpg" alt="banner"></div>
         <div class="container">
-          <div class="page-header--menu"><a class="close" href="#">&#10005;</a>
+          <div class="page-header--menu" id="page-menu"><a class="close" id="page-menu-close" href="#">&#10005;</a>
             <div class="inner">
               <div class="logo lazy-img"><img class="fade" data-src="img/logo.png" alt="logo"></div><a href="#event">
                 <div class="icon lazy-img"><img class="fade" data-src="img/icon-event.png" alt="event"></div><strong>Thông tin sự kiện</strong></a><a href="#about">
@@ -31,9 +31,12 @@
         </div>
       </header>
       <main class="page-content">
-        <section class="page-content--event" id="event">
+        <section class="page-content--event">
           <div class="container">
-            <div class="location">
+            <div class="location" id="event">
+              <div class="title">
+                <h2>Thông tin sự kiện</h2>
+              </div>
               <div class="photo lazy-img" data-scroll-animation="fadeInDown"><img class="fade" data-src="img/photo-0.jpg" alt="0"></div>
               <div class="name">
                 <div class="icon lazy-img"><img class="fade" data-src="img/icon-marker.png" alt="marker"></div><span>Dinh độc lập</span>
@@ -45,20 +48,23 @@
               </div>
               <div class="detail">
                 <div class="item address">
-                  <div class="icon lazy-img"><img class="fade" data-src="img/icon-map.png" alt="map"></div><strong>Địa chỉ</strong><span>135 Nam Kỳ Khởi Nghĩa,</span><span>Quận 1, TP. HCM</span><a href="https://g.page/independencepalace?share" target="_blank" rel="noreferrer">Xem chỉ đường &#10141;</a>
+                  <div class="icon lazy-img"><img class="fade" data-src="img/icon-map.png" alt="map"></div>
+                  <div class="note"><strong>Địa chỉ</strong><span>135 Nam Kỳ Khởi Nghĩa,</span><span>Quận 1, TP. HCM</span><a href="https://g.page/independencepalace?share" target="_blank" rel="noreferrer">Xem chỉ đường &#10141;</a></div>
                 </div>
                 <div class="item time">
-                  <div class="icon lazy-img"><img class="fade" data-src="img/icon-clock.png" alt="clock"></div><strong>Thời gian</strong><span>Thứ 4, ngày 28.10.2020</span><span>Giờ ****</span>
+                  <div class="icon lazy-img"><img class="fade" data-src="img/icon-clock.png" alt="clock"></div>
+                  <div class="note"><strong>Thời gian</strong><span>Thứ 4, ngày 28.10.2020</span><span>Giờ ****</span></div>
                 </div>
                 <div class="item people">
-                  <div class="icon lazy-img"><img class="fade" data-src="img/icon-people.png" alt="people"></div><strong>Số lượng</strong><span>Số lượng khách:</span><span>500 - 700</span>
+                  <div class="icon lazy-img"><img class="fade" data-src="img/icon-people.png" alt="people"></div>
+                  <div class="note"><strong>Số lượng</strong><span>Số lượng khách:</span><span>500 - 700</span></div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section class="page-content--about" id="about">
-          <div class="title">
+        <section class="page-content--about">
+          <div class="title" id="about">
             <div class="container">
               <h2>Giới thiệu</h2>
             </div>
@@ -86,8 +92,8 @@
             </div>
           </div>
         </section>
-        <section class="page-content--product" id="product">
-          <div class="title">
+        <section class="page-content--product">
+          <div class="title" id="product">
             <h2>Danh mục sản phẩm</h2>
           </div>
           <div class="container">

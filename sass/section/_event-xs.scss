@@ -1,2 +1,103 @@
 .page-content--event {
+	top: 0;
+	right: 0;
+	background: $color-light-1;
+
+	.container {
+		flex-flow: column;
+	}
+
+	.location,
+	.info {
+		width: 100%;
+	}
+
+	.location {
+		.title {
+			display: block;
+			text-align: center;
+			position: relative;
+
+			&:after {
+				content: "";
+				width: 100%;
+				height: 1px;
+				background: $color-brand;
+				@include center-parent($dir: ver, $left: 0);
+			}
+
+			h2 {
+				z-index: 2;
+				padding: 0 2rem;
+				position: relative;
+				display: inline-block;
+				background: $color-light-1;
+			}
+		}
+
+		.photo {
+			top: 0;
+			border: 0 none;
+		}
+
+		.name {
+			margin-top: 1rem;
+		}
+	}
+
+	.info {
+		padding: 0;
+
+		.title {
+			display: none;
+		}
+
+		.detail {
+			padding: 1rem;
+			flex-flow: column;
+
+			.item {
+				width: 100%;
+				display: flex;
+				text-align: left;
+				margin-top: 1rem;
+				padding: 1rem;
+				align-items: flex-start;
+				@include border-radius(0.35rem);
+				border: 2px solid $color-accent-2;
+
+				&:first-of-type {
+					margin-top: 0;
+				}
+
+				.icon {
+					margin: 0;
+					width: 3rem;
+				}
+
+				.note {
+					margin-left: 1rem;
+
+					strong {
+						&:after {
+							left: 0;
+							transform: none;
+						}
+					}
+
+					span {
+						font-size: 0.8rem;
+					}
+
+					a {
+						display: block;
+					}
+				}
+
+				&.address .note span {
+					display: inline;
+				}
+			}
+		}
+	}
 }

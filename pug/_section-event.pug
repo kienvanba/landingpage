@@ -1,6 +1,8 @@
-section#event.page-content--event
+section.page-content--event
   .container
-    .location
+    #event.location
+      .title
+          h2 Thông tin sự kiện
       .photo.lazy-img(data-scroll-animation="fadeInDown")
         img.fade(data-src="img/photo-0.jpg" alt="0")
       .name
@@ -14,19 +16,22 @@ section#event.page-content--event
         .item.address
           .icon.lazy-img
             img.fade(data-src="img/icon-map.png" alt="map")
-          strong Địa chỉ
-          span 135 Nam Kỳ Khởi Nghĩa,
-          span Quận 1, TP. HCM
-          a(href="https://g.page/independencepalace?share" target="_blank" rel="noreferrer") Xem chỉ đường &#10141;
+          .note
+            strong Địa chỉ
+            span 135 Nam Kỳ Khởi Nghĩa,
+            span Quận 1, TP. HCM
+            a(href="https://g.page/independencepalace?share" target="_blank" rel="noreferrer") Xem chỉ đường &#10141;
         .item.time
           .icon.lazy-img
             img.fade(data-src="img/icon-clock.png" alt="clock")
-          strong Thời gian
-          span Thứ 4, ngày 28.10.2020
-          span Giờ ****
+          .note
+            strong Thời gian
+            span Thứ 4, ngày 28.10.2020
+            span Giờ ****
         .item.people
           .icon.lazy-img
             img.fade(data-src="img/icon-people.png" alt="people")
-          strong Số lượng
-          span Số lượng khách:
-          span 500 - 700
+          .note
+            strong Số lượng
+            span Số lượng khách:
+            span 500 - 700

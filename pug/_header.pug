@@ -1,17 +1,25 @@
 header.page-header
+  .page-header--bar
+    a.toggle(href="#"): i.fa.fa-bars
+    .logo.lazy-img
+      img.fade(data-src="img/logo.png" alt="logo")
   .page-header--banner.lazy-img(data-scroll-animation="fadeInDown")
     img.fade(data-src="img/banner.jpg" alt="banner")
   .container
     .page-header--menu
-      a(href="#event")
-        .icon.lazy-img
-          img.fade(data-src="img/icon-event.png" alt="event")
-        strong Thông tin sự kiện
-      a(href="#about")
-        .icon.lazy-img
-          img.fade(data-src="img/icon-note.png" alt="note")
-        strong Giới thiệu
-      a(href="#product")
-        .icon.lazy-img
-          img.fade(data-src="img/icon-calendar.png" alt="calendar")
-        strong Danh mục sản phẩm
+      a.close(href="#") &#10005;
+      .inner
+        .logo.lazy-img
+          img.fade(data-src="img/logo.png" alt="logo")
+        a(href="#event")
+          .icon.lazy-img
+            img.fade(data-src="img/icon-event.png" alt="event")
+          strong Thông tin sự kiện
+        a(href="#about")
+          .icon.lazy-img
+            img.fade(data-src="img/icon-note.png" alt="note")
+          strong Giới thiệu
+        a(href="#product")
+          .icon.lazy-img
+            img.fade(data-src="img/icon-calendar.png" alt="calendar")
+          strong Danh mục sản phẩm

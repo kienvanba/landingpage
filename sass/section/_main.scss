@@ -1,0 +1,165 @@
+.page-view {
+	position: relative;
+}
+
+.page-scroll-top {
+	width: 2rem;
+	height: 2rem;
+	opacity: 0.5;
+	background: $color-light-1;
+	border: 1px solid $color-dark-1;
+	transition: opacity 250ms ease-in-out;
+	@include fixed($right: 1rem, $bottom: 1rem, $z-index: 2);
+
+	&:hover {
+		opacity: 1;
+	}
+
+	.fa {
+		@include center-parent;
+	}
+}
+
+.page-header {
+	z-index: 3;
+	position: relative;
+
+	&--bar {
+		display: none;
+	}
+
+	&--banner {
+		&::before {
+			padding-bottom: calc-ratio(16, 9);
+		}
+	}
+
+	&--menu {
+		margin: 2rem 0;
+
+		.close {
+			display: none;
+		}
+
+		.inner {
+			display: flex;
+			justify-content: space-between;
+
+			.logo {
+				display: none;
+			}
+
+			a {
+				text-align: center;
+				padding: 1.5rem 2rem 1rem;
+				width: calc((100% - 4rem) / 3);
+				border: 2px solid $color-accent-2;
+				transition: all 250ms ease-in-out;
+
+				&:hover {
+					background: $color-accent-2;
+					box-shadow: 0 0 0.75rem 0.75rem rgba($color-dark-1, 0.05);
+				}
+
+				.icon {
+					width: 70%;
+					margin: 0 auto;
+				}
+
+				strong {
+					display: block;
+					margin-top: 1rem;
+					padding-top: 1rem;
+					position: relative;
+					text-transform: uppercase;
+
+					&:before {
+						content: "";
+						width: 2rem;
+						height: 2px;
+						background: $color-brand;
+						@include center-parent($dir: hor, $top: 0);
+					}
+				}
+			}
+		}
+	}
+}
+
+.page-footer {
+	padding: 2rem 0;
+	margin-top: 4rem;
+	font-size: 0.8rem;
+	line-height: 2.25;
+	position: relative;
+	background: $color-accent-3;
+
+	.container {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+
+	.col {
+		width: 30%;
+	}
+
+	.left {
+		.title {
+			line-height: 1.75;
+			text-transform: uppercase;
+
+			strong {
+				display: block;
+			}
+		}
+
+		.contact {
+			margin-top: 0.25em;
+
+			.fa {
+				width: 1.5rem;
+				display: inline-block;
+			}
+		}
+
+		.social {
+			display: flex;
+			align-items: center;
+			margin-top: 0.75rem;
+			padding-top: 0.75rem;
+			justify-content: flex-start;
+			border-top: 1px solid $color-dark-1;
+
+			li {
+				display: block;
+				margin-right: 1.5rem;
+			}
+		}
+	}
+
+	.middle {
+		.license {
+			margin-top: 3.5em;
+		}
+
+		.logo-trade {
+			width: 12em;
+			margin-top: 1em;
+
+			&:before {
+				padding-bottom: calc-ratio(363, 137);
+			}
+		}
+	}
+
+	.right {
+		.video {
+			margin-top: 2em;
+		}
+	}
+}
+
+.page-content {
+	position: relative;
+}
